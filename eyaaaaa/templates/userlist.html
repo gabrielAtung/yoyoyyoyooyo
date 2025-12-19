@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Daftar User</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <table cellspacing="5" >
+            <thead>
+                <tr>                
+                    <td>Nama Lengkap</td>                    
+                    <td>Tempat Lahir</td>
+                    <td>Username</td>
+                    <td>Password</td>
+                </tr>
+            </thead>
+            <tbody id="userlist">
+                <!-- using jinja syntax-->
+                {% for user in listuser %}
+                <tr>                    
+                    <td>{{ user.realname }}</td>
+                    <td>{{ user.pob }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>               
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </body>
+</html>
